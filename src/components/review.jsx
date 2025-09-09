@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 
 const clientImages = [
-  "/r1.png",
-  "/r2.png",
-  "/r3.png",
-  "/r4.png",
+  "review/r1.png",
+  "review/r2.png",
+  "review/r3.png",
+  "review/r4.png",
 ];
 
 export default function Reviews() {
@@ -80,7 +80,7 @@ export default function Reviews() {
 
       {/* Angka review */}
       <h3 className="text-2xl font-bold text-white">
-        {count}+ Reviews <span className="text-gray-300">(4.9 of 5)</span>
+        {count}+ Reviews <span className="text-white">(4.9 of 5)</span>
       </h3>
       <p className="text-gray-400 mt-1">Reviews from Valued Clients</p>
     </section>

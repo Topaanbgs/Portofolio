@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Reviews from "../components/riview"; // cek nama file riview.jsx bener2 sama
+import Reviews from "../components/review";
 
 const experiences = [
   {
