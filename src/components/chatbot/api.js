@@ -1,9 +1,8 @@
-// src/components/chatbot/api.js
-
+// Fungsi utama AI chatbot sederhana
 export const getAIResponse = (userMessage) => {
   const message = userMessage.toLowerCase().trim();
 
-  // --- ENGLISH KNOWLEDGE BASES ---
+  // --- Basis data jawaban EN (bot & owner) ---
   const englishSelfKnowledgeBase = [
     {
       keywords: ["who are you", "your name", "what's your name", "who's amoraaa"],
@@ -14,7 +13,6 @@ export const getAIResponse = (userMessage) => {
       response: "My purpose is to provide relevant and efficient information about the owner of this portfolio, based on the data I have learned.",
     },
   ];
-
   const englishOwnerKnowledgeBase = [
     {
       keywords: ["who is he", "what's his name", "portfolio owner", "owner's name", "owner"],
@@ -54,7 +52,7 @@ export const getAIResponse = (userMessage) => {
     },
   ];
 
-  // --- INDONESIAN KNOWLEDGE BASES ---
+  // --- Basis data jawaban ID (bot & owner) ---
   const indonesianSelfKnowledgeBase = [
     {
       keywords: ["siapa kamu", "nama kamu", "namamu"],
@@ -69,7 +67,6 @@ export const getAIResponse = (userMessage) => {
       response: "Saya adalah Amoraaa, sebuah program AI yang dibuat untuk memberikan informasi seputar portofolio ini.",
     },
   ];
-
   const indonesianOwnerKnowledgeBase = [
     {
       keywords: ["siapa dia", "namanya", "pemilik website", "nama pemilik", "pemilik"],
@@ -109,46 +106,40 @@ export const getAIResponse = (userMessage) => {
     },
   ];
 
-  // Fungsi untuk mencari respons di basis data
+  // Cari jawaban di basis data
   const findResponse = (knowledgeBase) => {
     for (const item of knowledgeBase) {
-      const isMatch = item.keywords.some(keyword => message.includes(keyword));
-      if (isMatch) {
+      if (item.keywords.some(keyword => message.includes(keyword))) {
         return item.response;
       }
     }
-    return null; // Tidak ada respons yang ditemukan
+    return null;
   };
 
-  // Cek apakah pesan menggunakan bahasa Inggris
+  // Deteksi bahasa (EN vs ID)
   const isEnglish = (msg) => {
     const englishTestKeywords = ["who", "what", "how", "when", "where", "my", "your", "name", "job", "skill", "contact", "about"];
     return englishTestKeywords.some(keyword => msg.includes(keyword));
   };
 
-  // Jika pesan dalam bahasa Inggris, cari di basis data bahasa Inggris
   if (isEnglish(message)) {
-    const englishResponse = findResponse(englishSelfKnowledgeBase) || findResponse(englishOwnerKnowledgeBase);
-    if (englishResponse) {
-      return englishResponse;
-    }
-    return "I'm sorry, I don't understand your question. Please try asking something else about this portfolio.";
+    return findResponse(englishSelfKnowledgeBase) ||
+           findResponse(englishOwnerKnowledgeBase) ||
+           "I'm sorry, I don't understand your question. Please try asking something else about this portfolio.";
   }
 
-  // Jika tidak, cari di basis data bahasa Indonesia
   const indonesianResponse = findResponse(indonesianSelfKnowledgeBase) || findResponse(indonesianOwnerKnowledgeBase);
-  if (indonesianResponse) {
-    return indonesianResponse;
-  }
+  if (indonesianResponse) return indonesianResponse;
 
-  // Jawaban untuk pertanyaan di luar konteks
-  const outOfContextKeywords = ["cerita", "film", "hobi", "makanan", "minuman", "travel", "jalan-jalan", "musik", "game", "favorit", "suka", "apa kabar", "kamu suka", "kamu hobinya", "story", "movie", "hobbies", "food", "drinks", "traveling", "music", "games", "favorite", "like", "how are you"];
-  const isOutOfContext = outOfContextKeywords.some(keyword => message.includes(keyword));
-
-  if (isOutOfContext) {
+  // Respons out-of-context
+  const outOfContextKeywords = [
+    "cerita", "film", "hobi", "makanan", "minuman", "travel", "jalan-jalan", "musik", "game", "favorit", "suka",
+    "apa kabar", "kamu suka", "kamu hobinya", "story", "movie", "hobbies", "food", "drinks", "traveling", "music", "games", "favorite", "like", "how are you"
+  ];
+  if (outOfContextKeywords.some(keyword => message.includes(keyword))) {
     return "Maaf, saya hanya bisa menjawab pertanyaan seputar portofolio ini. Jika Anda ingin bertanya tentang pemiliknya, silakan ajukan pertanyaan lain. / Sorry, I can only answer questions about this portfolio. If you want to ask about its owner, please ask another question.";
   }
 
-  // Jika tidak ada di database manapun
+  // Default
   return "Maaf, saya tidak mengerti pertanyaan Anda. Coba tanyakan hal lain seputar portofolio ini. / Sorry, I don't understand your question. Please try asking something else about this portfolio.";
 };

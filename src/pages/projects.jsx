@@ -51,8 +51,8 @@ const projects = [
   {
     title: "App Mockup - Kick Avenue",
     description:
-      "A project to design a mockup for the Kick Avenue app, which is a marketplace for authentic sneakers and luxury goods. The work includes user workflow, wireframes, and high-fidelity designs.",
-    techStack: ["Userflow Diagrams", "Wireframes", "Figma"],
+      "Created a high-fidelity app mockup for Kick Avenue, a luxury goods marketplace. The project included developing user workflows, wireframes, and final designs.",
+    techStack: ["Figma"],
     image: "/project/kickave.png",
     link: "https://go.undiksha.ac.id/EXojH",
     figma: "https://go.undiksha.ac.id/qx49h",

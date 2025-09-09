@@ -14,7 +14,7 @@ export default function TimelineAbout() {
   const [visibleIndexes, setVisibleIndexes] = useState([]);
   const timelineRefs = useRef([]);
 
-  /** Animasi muncul timeline saat discroll */
+  /** Animasi muncul timeline */
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import logo from "../assets/logo.png";
-import background from "../assets/background.png";
-
-import TechLogos from "../components/techlogo";
-import Projects from "./projects";
-import TypingEffect from "../components/typing";
-import About from "./about";
 import Load from "../components/load";
+
+import background from "../assets/background.png";
+import TypingEffect from "../components/typing";
+import TechLogos from "../components/techlogo";
+import About from "./about";
+import Projects from "./projects";
+import Contact from "./contact";
 
 import ChatButton from "../components/chatbot/chatbutton";
 import ChatWindow from "../components/chatbot/chatwindow";
@@ -123,6 +124,16 @@ function Index() {
           <section id="projects">
             <Projects />
           </section>
+          
+          {/* Contact Section */}
+          <section id="contact">
+            <Contact />
+          </section>
+
+          {/* Footer Section */}
+          <footer className="bg-black text-white py-6 text-center">
+            <p>&copy; 2025 Topan Bagus Prasetyo. All Rights Reserved.</p>
+          </footer>
 
           {/* Chatbot */}
           <ChatButton onClick={() => setIsChatOpen(!isChatOpen)} />
