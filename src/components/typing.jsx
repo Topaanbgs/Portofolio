@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+// Efek ketik + hapus teks
 function TypingEffect({ text, speed = 120, eraseSpeed = 80, delay = 1500 }) {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);

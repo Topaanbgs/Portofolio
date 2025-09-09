@@ -10,18 +10,17 @@ const clientImages = [
 export default function Reviews() {
   const [count, setCount] = useState(0);
   const [visible, setVisible] = useState([]);
-  const target = 100; // target angka review
+  const target = 100;
   const sectionRef = useRef(null);
 
-  // fungsi untuk animasi angka + foto
+  // Jalankan animasi angka & foto
   const startAnimation = () => {
-    // reset dulu biar bisa animasi lagi
     setCount(0);
     setVisible([]);
 
-    // animasi angka
+    // animasi angka naik
     let start = 0;
-    const duration = 2000; // 2 detik
+    const duration = 2000;
     const stepTime = Math.max(10, Math.floor(duration / target));
 
     const timer = setInterval(() => {
@@ -30,7 +29,7 @@ export default function Reviews() {
       if (start >= target) clearInterval(timer);
     }, stepTime);
 
-    // animasi foto muncul satu per satu
+    // animasi foto
     clientImages.forEach((_, i) => {
       setTimeout(() => {
         setVisible((prev) => [...prev, i]);
@@ -38,20 +37,18 @@ export default function Reviews() {
     });
   };
 
+  // Observer untuk trigger animasi
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            startAnimation(); // trigger animasi setiap kali masuk viewport
-          }
+          if (entry.isIntersecting) startAnimation();
         });
       },
-      { threshold: 0.5 } // minimal 50% elemen terlihat
+      { threshold: 0.5 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };

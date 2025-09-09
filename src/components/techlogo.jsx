@@ -1,19 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaGithub,
-  FaPhp,
-  FaPython,
-  FaJava,
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs,
+  FaGitAlt, FaGithub, FaPhp, FaPython, FaJava
 } from "react-icons/fa";
-import { SiTailwindcss, SiLaravel, SiPostman, SiMysql, SiDocker, SiKubernetes } from "react-icons/si";
+import {
+  SiTailwindcss, SiLaravel, SiPostman,
+  SiMysql, SiDocker, SiKubernetes
+} from "react-icons/si";
 
 function TechLogos() {
+  // Daftar icon
   const logos = [
     <FaHtml5 className="text-orange-600" />,
     <FaCss3Alt className="text-blue-600" />,
@@ -35,10 +31,13 @@ function TechLogos() {
 
   const containerRef = useRef(null);
   const [paused, setPaused] = useState(false);
+
+  // variabel untuk animasi scroll otomatis
   const speedRef = useRef(0.5);
   const directionRef = useRef(1);
   const posRef = useRef(0);
 
+  // Loop animasi jalan otomatis
   useEffect(() => {
     let animationFrame;
 
@@ -60,10 +59,12 @@ function TechLogos() {
     return () => cancelAnimationFrame(animationFrame);
   }, [paused]);
 
+  // Reaksi saat scroll
   useEffect(() => {
     let timeout;
     const handleScroll = () => {
       const currentY = window.scrollY;
+
       if (currentY > (window.lastScrollY || 0)) {
         directionRef.current = 1;
         speedRef.current = 2;
