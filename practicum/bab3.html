@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAB 3 - Responsive CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <style>
+      body {
+        font-family: "Futura";
+      }
+      .box-shadow {
+        box-shadow: 4px 4px 0px #000;
+      }
+      article .prose p {
+        text-indent: 1.5em;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black antialiased transition-colors duration-300">
+    <header class="bg-black text-white text-center p-6 border-b-2 border-black box-shadow mb-10 relative">
+      <div class="flex items-center justify-center relative">
+        <a href="/" class="absolute left-20 mt-10 p-5 rounded-full bg-white text-black transition-colors duration-300 hover:bg-gray-200 box-shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </a>
+        <h1 class="text-4xl font-extrabold tracking-wide">Praktikum Teknologi Web - BAB 1</h1>
+      </div>
+      <nav class="mt-4">
+        <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+          <li><a href="bab1.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 1</a></li>
+          <li><a href="bab2.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 2</a></li>
+          <li><a href="bab3.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 3</a></li>
+          <li><a href="bab4.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 4</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container mx-auto p-8 bg-white border-2 border-black rounded-3xl box-shadow">
+      <h2 class="text-5xl font-extrabold text-center mb-12 border-b-2 border-black pb-4">Our Medium: Ruang Suara Generasi Muda</h2>
+      <article>
+        <div class="mb-10 transform transition-transform hover:scale-[1.01] duration-300">
+          <div class="relative w-full pb-[30%] overflow-hidden border-2 border-black box-shadow">
+            <img src="art1.jpeg" alt="Gambar utama artikel" class="absolute top-0 left-0 w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <div class="flex flex-wrap md:flex-row -mx-2">
+          <div class="w-full md:w-2/3 px-2 mb-8 md:mb-0">
+            <div class="p-6 border-2 border-black rounded-xl box-shadow">
+              <header class="mb-6">
+                <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-2">Mahasiswa dan Validasi Sosial: "Magang di Mana?"</h1>
+                <p class="text-md md:text-lg font-light mt-2">oleh <span class="font-semibold">Adi Sutiyoso</span></p>
+              </header>
+              <div class="prose max-w-none text-justify text-gray-800">
+                <p class="mb-4">
+                  Dalam beberapa tahun terakhir, kita menyaksikan pergeseran paradigma di kalangan mahasiswa. Pengalaman magang kini kerap ditempatkan sebagai tolok ukur utama keberhasilan atau “kesuksesan awal”. Tidak jarang, diterima
+                  magang di instansi bergengsi, baik itu firma hukum, perusahaan multinasional, kementrian, atau agency ternama, dianggap sebagai validasi sosial, bahkan sebagai penanda status intelektual. Namun apakah kecenderungan ini
+                  benar-benar sehat dan substantif bagi pertumbuhan mahasiswa secara menyeluruh?
+                </p>
+                <p class="mb-4">
+                  Kultur digital dan media sosial turut mempercepat glorifikasi magang. Unggahan di LinkedIn atau Instagram tentang “I’m thrilled to announce…” menjadi bentuk pencapaian yang cepat mendapatkan atensi dan pujian. Fenomena ini
+                  mendorong mahasiswa untuk mengejar validasi eksternal. Bukan hanya untuk belajar, melainkan untuk “terlihat” berhasil. Akibatnya, muncul semacam Fear of Missing Out (FOMO) yang tidak sehat. Mahasiswa merasa tertinggal,
+                  gagal, atau bahkan kurang layak hanya karena belum diterima magang. Padahal, di saat yang sama, mungkin mereka tengah mengerjakan riset, membina komunitas sosial, atau mengembangkan kapasitas akademik.
+                </p>
+                <p class="mb-4">
+                  Fenomena ini juga tak lepas dari logika pasar. Mahasiswa, secara tidak sadar, terjebak dalam ekonomi pengalaman (experience economy) yang menuntut portofolio sebanyak mungkin dan secepat mungkin. Magang menjadi produk yang
+                  diperebutkan demi CV yang padat, bukan lagi ruang pembelajaran murni. Kondisi semacam ini menempatkan mahasiswa sebagai subjek komodifikasi, di mana mereka tidak belajar untuk mengembangkan diri, melainkan agar “layak
+                  jual” di pasar kerja. Di sini, idealisme sebagai pembelajar perlahan tergerus oleh logika kapitalistik yang berbicara tentang siapa yang paling cepat, paling sering, dan paling terlihat.
+                </p>
+                <p class="mb-4">
+                  Secara historis, mahasiswa dikenal sebagai kelompok sosial yang kritis, resisten terhadap status quo, dan mampu menawarkan narasi tandingan. Namun, ketika keberhasilan magang menjadi ukuran utama, muncul kekhawatiran bahwa
+                  mahasiswa akan lebih sibuk membangun personal branding, ketimbang memperjuangkan collective learning. Hal ini berisiko menghilangkan tradisi intelektual mahasiswa sebagai aktor perubahan sosial, bukan sekedar pencari
+                  peluang kerja. Tentu, tidak ada yang salah dengan magang. Pengalaman itu bisa sangat memperkaya dan membuka pengalaman praktis. Namun, penting untuk menegaskan bahwa magang bukanlah puncak dari proses pembelajaran,
+                  melainkan hanya salah satu sarana di antara banyak jalan.
+                </p>
+                <p class="mb-4">
+                  Perihal yang esensial adalah kesadaran reflektif tentang memahami mengapa dan untuk apa sesuatu itu dilakukan; kematangan berpikir seperti berani menyelami hal-hal yang kompleks; dan konsistensi bertumbuh dengan tetap
+                  belajar, bahkan ketika tidak dilihat atau tidak divalidasi. Dalam dunia yang serba cepat dan kompetitif ini, justru mahasiswa yang berani mengambil jalan lambat, penuh kontemplasi, dan membangun kedalaman intelektual
+                  secara bertahap mungkin adalah mereka yang akan bertahan lebih jauh. Bukan hanya sebagai pekerja yang kompeten, tetapi sebagai manusia yang utuh. Penting untuk ditekankan bahwa tulisan ini bukanlah kritik terhadap praktik
+                  magang itu sendiri. Bukan pula kecaman terhadap mahasiswa yang berhasil meraih kesempatan magang, apalagi mereka yang menjalaninya dengan niat belajar, tumbuh, dan memberi kontribusi. Ia membuka jendela ke dunia
+                  profesional yang nyata.
+                </p>
+                <p class="mb-4">
+                  Dalam konteks ini, perihal yang menjadi fokus kritik adalah ketika magang secara sistemik diposisikan sebagai satu-satunya atau tolok ukur utama keberhasilan mahasiswa. Ketika struktur sosial di kampus, baik secara formal
+                  maupun kultural, mulai menciptakan tekanan, kompetisi, bahkan hierarki sosial berdasarkan siapa yang “sudah magang” dan di mana, maka kita perlu mengangkat pertanyaan kritis: Apakah ini mencerminkan nilai-nilai pendidikan
+                  yang adil dan sehat?
+                </p>
+                <p>
+                  Menciptakan ekosistem kampus yang lebih sehat dan suportif ialah suatu keniscayaan, agar kampus menjadi lahan subur tumbuhnya manusia pembelajar yang kelak menjadi akar dari pohon peradaban bangsa. Ekosistem di mana semua
+                  proses bertumbuh, baik yang sunyi maupun yang gemerlap, mendapatkan tempat yang setara untuk dihargai. Sebab pada akhirnya, semua mahasiswa sejatinya sedang menempuh jalan masing-masing menuju kematangan sebagai manusia
+                  pembelajar.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/3 px-2">
+            <div class="p-6 border-2 border-black rounded-xl box-shadow mb-6">
+              <h3 class="text-xl font-bold mb-4">Tentang Penulis</h3>
+              <p>Artikel ini ditulis oleh Adi Sutiyoso, seorang mahasiswa yang memiliki ketertarikan pada isu-isu sosial dan pendidikan di era modern.</p>
+            </div>
+
+            <div class="p-6 border-2 border-black rounded-xl box-shadow">
+              <h3 class="text-xl font-bold mb-4">Artikel Terpopuler</h3>
+              <div class="space-y-4">
+                <a href="#" class="block hover:bg-black hover:text-white p-4 rounded-lg transition-colors duration-200 flex items-start space-x-4">
+                  <span class="text-3xl font-bold text-gray-400">01</span>
+                  <div>
+                    <h4 class="font-bold text-lg">Mahasiswa dan Validasi Sosial: "Magang di Mana?"</h4>
+                  </div>
+                </a>
+                <a href="#" class="block hover:bg-black hover:text-white p-4 rounded-lg transition-colors duration-200 flex items-start space-x-4">
+                  <span class="text-3xl font-bold text-gray-400">02</span>
+                  <div>
+                    <h4 class="font-bold text-lg">Mengapa Masa Depan Kita Bergantung pada Perpustakaan, Membaca, dan Rasa Bosan</h4>
+                  </div>
+                </a>
+                <a href="#" class="block hover:bg-black hover:text-white p-4 rounded-lg transition-colors duration-200 flex items-start space-x-4">
+                  <span class="text-3xl font-bold text-gray-400">03</span>
+                  <div>
+                    <h4 class="font-bold text-lg">Merayakan Sinema, Musik, dan Kehidupan</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <h2 class="text-3xl font-bold mb-6">Artikel Terkait</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 border-2 border-black rounded-xl box-shadow transform transition-transform hover:scale-[1.03] duration-300">
+              <img src="art2.jpeg" alt="Gambar artikel terkait 1" class="w-full mb-4 border-2 border-black box-shadow aspect-video object-cover" />
+              <h3 class="text-xl font-bold">Langkah-Langkah Kecil untuk Bertahan di Dunia yang Serba Bising</h3>
+              <p class="mt-2 text-sm">Sebuah tulisan reflektif tentang pentingnya berhenti sejenak dan menikmati setiap langkah dalam hidup yang penuh tekanan.</p>
+            </div>
+            <div class="p-6 border-2 border-black rounded-xl box-shadow transform transition-transform hover:scale-[1.03] duration-300">
+              <img src="art3.jpeg" alt="Gambar artikel terkait 2" class="w-full mb-4 border-2 border-black box-shadow aspect-video object-cover" />
+              <h3 class="text-xl font-bold">Langit Tahu, Bunga Mana Lagi yang Harus DipetikNya</h3>
+              <p class="mt-2 text-sm">Sebuah renungan puitis tentang kehilangan dan kepergian seseorang yang meninggalkan kesan mendalam.</p>
+            </div>
+            <div class="p-6 border-2 border-black rounded-xl box-shadow transform transition-transform hover:scale-[1.03] duration-300">
+              <img src="art4.jpeg" alt="Gambar artikel terkait 3" class="w-full mb-4 border-2 border-black box-shadow aspect-video object-cover" />
+              <h3 class="text-xl font-bold">Nyata Bahwa Ibukota Jakarta Bukan Untuk Pemula</h3>
+              <p class="mt-2 text-sm">Kisah pribadi seorang anak rantau yang datang ke Jakarta dengan segudang mimpi namun dihadapkan pada realitas yang keras.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <footer class="bg-black text-white text-center p-4 mt-10 border-t-2 border-black box-shadow">
+      <p>&copy; 2025 Topan Bagus | Didesain responsif dengan Tailwind CSS.</p>
+    </footer>
+  </body>
+</html>

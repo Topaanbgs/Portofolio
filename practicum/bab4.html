@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAB 4 - JavaScript & jQuery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <style>
+      body {
+        font-family: "Futura";
+      }
+      .box-shadow {
+        box-shadow: 4px 4px 0px #000;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black antialiased transition-colors duration-300">
+    <header class="bg-black text-white text-center p-6 border-b-2 border-black box-shadow mb-10 relative">
+      <div class="flex items-center justify-center relative">
+        <a href="/" class="absolute left-20 mt-10 p-5 rounded-full bg-white text-black transition-colors duration-300 hover:bg-gray-200 box-shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </a>
+        <h1 class="text-4xl font-extrabold tracking-wide">Praktikum Teknologi Web - BAB 1</h1>
+      </div>
+      <nav class="mt-4">
+        <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+          <li><a href="bab1.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 1</a></li>
+          <li><a href="bab2.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 2</a></li>
+          <li><a href="bab3.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 3</a></li>
+          <li><a href="bab4.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 4</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container mx-auto p-8 bg-white border-2 border-black rounded-3xl box-shadow">
+      <h2 class="text-3xl font-bold mb-6 text-center">Kalkulator Luas Bangun Datar</h2>
+      <div class="max-w-xl mx-auto">
+        <div class="bg-white p-6 border-2 border-black rounded-xl box-shadow">
+          <div class="mb-4">
+            <label for="shape-select" class="block font-semibold mb-2">Pilih Bangun Datar:</label>
+            <select id="shape-select" class="w-full px-4 py-2 bg-white border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200">
+              <option value="">-- Pilih --</option>
+              <option value="square">Persegi</option>
+              <option value="rectangle">Persegi Panjang</option>
+              <option value="triangle">Segitiga</option>
+              <option value="circle">Lingkaran</option>
+            </select>
+          </div>
+
+          <div id="square-inputs" class="hidden mb-4">
+            <label for="square-side" class="block font-semibold mb-2">Panjang Sisi:</label>
+            <input type="number" id="square-side" placeholder="Masukkan panjang sisi" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200" />
+          </div>
+
+          <div id="rectangle-inputs" class="hidden mb-4">
+            <label for="rectangle-length" class="block font-semibold mb-2">Panjang:</label>
+            <input type="number" id="rectangle-length" placeholder="Masukkan panjang" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200 mb-4" />
+            <label for="rectangle-width" class="block font-semibold mb-2">Lebar:</label>
+            <input type="number" id="rectangle-width" placeholder="Masukkan lebar" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200" />
+          </div>
+
+          <div id="triangle-inputs" class="hidden mb-4">
+            <label for="triangle-base" class="block font-semibold mb-2">Alas:</label>
+            <input type="number" id="triangle-base" placeholder="Masukkan panjang alas" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200 mb-4" />
+            <label for="triangle-height" class="block font-semibold mb-2">Tinggi:</label>
+            <input type="number" id="triangle-height" placeholder="Masukkan tinggi" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200" />
+          </div>
+
+          <div id="circle-inputs" class="hidden mb-4">
+            <label for="circle-radius" class="block font-semibold mb-2">Jari-jari:</label>
+            <input type="number" id="circle-radius" placeholder="Masukkan jari-jari" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200" />
+          </div>
+
+          <button id="calculate-btn" class="w-full bg-black text-white font-bold py-3 px-4 rounded-none border-2 border-black hover:bg-white hover:text-black transition-colors duration-200 box-shadow">Hitung Luas</button>
+
+          <div class="mt-6 p-6 bg-black text-white rounded-xl border-2 border-black text-center hidden box-shadow transition-opacity duration-500" id="result-box">
+            <h3 class="text-xl font-semibold mb-2">Hasil:</h3>
+            <p id="result-text" class="text-4xl font-extrabold"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        const resultBox = $("#result-box");
+        const resultText = $("#result-text");
+        const inputFields = $(".hidden.mb-4");
+
+        $("#shape-select").on("change", function () {
+          const selectedShape = $(this).val();
+          inputFields.hide();
+          resultBox.hide();
+          $("#result-box").removeClass("opacity-100").addClass("opacity-0");
+
+          if (selectedShape === "square") {
+            $("#square-inputs").show();
+          } else if (selectedShape === "rectangle") {
+            $("#rectangle-inputs").show();
+          } else if (selectedShape === "triangle") {
+            $("#triangle-inputs").show();
+          } else if (selectedShape === "circle") {
+            $("#circle-inputs").show();
+          }
+        });
+
+        $("#calculate-btn").on("click", function () {
+          const selectedShape = $("#shape-select").val();
+          let area = 0;
+          let isValid = true;
+
+          if (selectedShape === "square") {
+            const side = parseFloat($("#square-side").val());
+            if (isNaN(side) || side <= 0) {
+              isValid = false;
+            } else {
+              area = side * side;
+            }
+          } else if (selectedShape === "rectangle") {
+            const length = parseFloat($("#rectangle-length").val());
+            const width = parseFloat($("#rectangle-width").val());
+            if (isNaN(length) || length <= 0 || isNaN(width) || width <= 0) {
+              isValid = false;
+            } else {
+              area = length * width;
+            }
+          } else if (selectedShape === "triangle") {
+            const base = parseFloat($("#triangle-base").val());
+            const height = parseFloat($("#triangle-height").val());
+            if (isNaN(base) || base <= 0 || isNaN(height) || height <= 0) {
+              isValid = false;
+            } else {
+              area = 0.5 * base * height;
+            }
+          } else if (selectedShape === "circle") {
+            const radius = parseFloat($("#circle-radius").val());
+            if (isNaN(radius) || radius <= 0) {
+              isValid = false;
+            } else {
+              area = Math.PI * radius * radius;
+            }
+          } else {
+            isValid = false;
+          }
+
+          if (isValid) {
+            resultText.text(area.toFixed(2));
+            resultBox.show().removeClass("opacity-0").addClass("opacity-100");
+          } else {
+            resultText.text("Input tidak valid.");
+            resultBox.show().removeClass("opacity-0").addClass("opacity-100");
+          }
+        });
+      });
+    </script>
+
+    <footer class="bg-black text-white text-center p-4 mt-10 border-t-2 border-black box-shadow">
+      <p>&copy; 2025 Topan Bagus | Dibuat dengan Tailwind CSS untuk desain & jQuery untuk fungsionalitas</p>
+    </footer>
+  </body>
+</html>
