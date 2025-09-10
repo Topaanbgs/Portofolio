@@ -1,11 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-const clientImages = [
-  "review/r1.png",
-  "review/r2.png",
-  "review/r3.png",
-  "review/r4.png",
-];
+const clientImages = ["review/r1.png", "review/r2.png", "review/r3.png", "review/r4.png"];
 
 export default function Reviews() {
   const [count, setCount] = useState(0);
@@ -18,7 +13,6 @@ export default function Reviews() {
     setCount(0);
     setVisible([]);
 
-    // animasi angka naik
     let start = 0;
     const duration = 2000;
     const stepTime = Math.max(10, Math.floor(duration / target));
@@ -55,23 +49,11 @@ export default function Reviews() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full flex flex-col items-center justify-center py-16"
-    >
+    <section ref={sectionRef} className="w-full flex flex-col items-center justify-center py-16">
       {/* Foto klien */}
       <div className="flex -space-x-4 mb-4">
         {clientImages.map((img, i) => (
-          <img
-            key={i}
-            src={img}
-            alt={`client-${i}`}
-            className={`w-12 h-12 rounded-full border-2 border-white object-cover transition-all duration-700 ${
-              visible.includes(i)
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-5"
-            }`}
-          />
+          <img key={i} src={img} alt={`client-${i}`} className={`w-12 h-12 rounded-full border-2 border-white object-cover transition-all duration-700 ${visible.includes(i) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} />
         ))}
       </div>
 

@@ -25,8 +25,7 @@ function Index() {
     if (!targetElement) return;
 
     const startPosition = window.pageYOffset;
-    const targetPosition =
-      targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
     const distance = targetPosition - startPosition;
     const duration = 1200;
     let startTime = null;
@@ -66,10 +65,7 @@ function Index() {
       {!loading && (
         <div className="relative min-h-screen font-[Futura]">
           {/* Hero Section */}
-          <section
-            className="relative min-h-screen flex flex-col text-white bg-cover bg-center"
-            style={{ backgroundImage: `url(${background})` }}
-          >
+          <section className="relative min-h-screen flex flex-col text-white bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
             <div className="absolute inset-0 bg-gradient-to-r from-black/100 via-black/70 to-transparent"></div>
 
             <div className="relative z-10 flex flex-col flex-1">
@@ -78,15 +74,27 @@ function Index() {
                 <div className="flex items-center space-x-4 md:space-x-8 font-bold">
                   <img src={logo} alt="Logo" className="h-8 md:h-10 w-auto" />
                   <nav className="hidden md:flex space-x-4 md:space-x-8">
-                    <a onClick={() => smoothScrollTo("about")} className="hover:text-gray-300 cursor-pointer">ABOUT</a>
-                    <a onClick={() => smoothScrollTo("projects")} className="hover:text-gray-300 cursor-pointer">PROJECTS</a>
-                    <a onClick={() => smoothScrollTo("contact")} className="hover:text-gray-300 cursor-pointer">CONTACT</a>
+                    <a onClick={() => smoothScrollTo("about")} className="hover:text-gray-300 cursor-pointer">
+                      ABOUT
+                    </a>
+                    <a onClick={() => smoothScrollTo("projects")} className="hover:text-gray-300 cursor-pointer">
+                      PROJECTS
+                    </a>
+                    <a onClick={() => smoothScrollTo("contact")} className="hover:text-gray-300 cursor-pointer">
+                      CONTACT
+                    </a>
                   </nav>
                 </div>
                 <div className="flex items-center space-x-4 md:space-x-6 text-xl md:text-2xl">
-                  <a href="https://linkedin.com/in/topanbagusprasetyo" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-                  <a href="https://github.com/Topaanbgs" target="_blank" rel="noreferrer"><FaGithub /></a>
-                  <a href="https://www.instagram.com/Topaanbgs" target="_blank" rel="noreferrer"><FaInstagram /></a>
+                  <a href="https://linkedin.com/in/topanbagusprasetyo" target="_blank" rel="noreferrer">
+                    <FaLinkedin />
+                  </a>
+                  <a href="https://github.com/Topaanbgs" target="_blank" rel="noreferrer">
+                    <FaGithub />
+                  </a>
+                  <a href="https://www.instagram.com/Topaanbgs" target="_blank" rel="noreferrer">
+                    <FaInstagram />
+                  </a>
                 </div>
               </header>
 
@@ -124,7 +132,7 @@ function Index() {
           <section id="projects">
             <Projects />
           </section>
-          
+
           {/* Contact Section */}
           <section id="contact">
             <Contact />
@@ -137,13 +145,7 @@ function Index() {
 
           {/* Chatbot */}
           <ChatButton onClick={() => setIsChatOpen(!isChatOpen)} />
-          {isChatOpen && (
-            <ChatWindow
-              onClose={() => setIsChatOpen(false)}
-              onSendMessage={handleSendMessage}
-              messages={messages}
-            />
-          )}
+          {isChatOpen && <ChatWindow onClose={() => setIsChatOpen(false)} onSendMessage={handleSendMessage} messages={messages} />}
         </div>
       )}
     </>

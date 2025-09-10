@@ -61,9 +61,7 @@ export default function TimelineAbout() {
               <div
                 key={index}
                 ref={(el) => (timelineRefs.current[index] = el)}
-                className={`relative w-full flex items-center my-10 transition-all duration-700 ease-in-out ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`relative w-full flex items-center my-10 transition-all duration-700 ease-in-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                 style={{ height: spacing }}
               >
                 {/* Garis horizontal */}
@@ -75,8 +73,12 @@ export default function TimelineAbout() {
                 {/* Box pengalaman */}
                 <div className={`w-52 px-2 ${isLeft ? "text-right mr-auto" : "text-left ml-auto"}`}>
                   <h3 className="font-bold text-lg">{exp.company}</h3>
-                  <p className="text-sm italic">{exp.position} ({exp.status})</p>
-                  <p className="text-sm">{exp.location} | {exp.year}</p>
+                  <p className="text-sm italic">
+                    {exp.position} ({exp.status})
+                  </p>
+                  <p className="text-sm">
+                    {exp.location} | {exp.year}
+                  </p>
                   <p className="mt-1 text-sm">{exp.description}</p>
                 </div>
               </div>

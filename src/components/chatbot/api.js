@@ -1,8 +1,7 @@
-// Fungsi utama AI chatbot sederhana
 export const getAIResponse = (userMessage) => {
   const message = userMessage.toLowerCase().trim();
 
-  // --- Basis data jawaban EN (bot & owner) ---
+  // --- Database jawaban EN (bot & owner) ---
   const englishSelfKnowledgeBase = [
     {
       keywords: ["who are you", "your name", "what's your name", "who's amoraaa"],
@@ -52,7 +51,7 @@ export const getAIResponse = (userMessage) => {
     },
   ];
 
-  // --- Basis data jawaban ID (bot & owner) ---
+  // --- Database jawaban ID (bot & owner) ---
   const indonesianSelfKnowledgeBase = [
     {
       keywords: ["siapa kamu", "nama kamu", "namamu"],
@@ -106,10 +105,10 @@ export const getAIResponse = (userMessage) => {
     },
   ];
 
-  // Cari jawaban di basis data
+  // Cari jawaban di Database
   const findResponse = (knowledgeBase) => {
     for (const item of knowledgeBase) {
-      if (item.keywords.some(keyword => message.includes(keyword))) {
+      if (item.keywords.some((keyword) => message.includes(keyword))) {
         return item.response;
       }
     }
@@ -119,13 +118,11 @@ export const getAIResponse = (userMessage) => {
   // Deteksi bahasa (EN vs ID)
   const isEnglish = (msg) => {
     const englishTestKeywords = ["who", "what", "how", "when", "where", "my", "your", "name", "job", "skill", "contact", "about"];
-    return englishTestKeywords.some(keyword => msg.includes(keyword));
+    return englishTestKeywords.some((keyword) => msg.includes(keyword));
   };
 
   if (isEnglish(message)) {
-    return findResponse(englishSelfKnowledgeBase) ||
-           findResponse(englishOwnerKnowledgeBase) ||
-           "I'm sorry, I don't understand your question. Please try asking something else about this portfolio.";
+    return findResponse(englishSelfKnowledgeBase) || findResponse(englishOwnerKnowledgeBase) || "I'm sorry, I don't understand your question. Please try asking something else about this portfolio.";
   }
 
   const indonesianResponse = findResponse(indonesianSelfKnowledgeBase) || findResponse(indonesianOwnerKnowledgeBase);
@@ -133,13 +130,36 @@ export const getAIResponse = (userMessage) => {
 
   // Respons out-of-context
   const outOfContextKeywords = [
-    "cerita", "film", "hobi", "makanan", "minuman", "travel", "jalan-jalan", "musik", "game", "favorit", "suka",
-    "apa kabar", "kamu suka", "kamu hobinya", "story", "movie", "hobbies", "food", "drinks", "traveling", "music", "games", "favorite", "like", "how are you"
+    "cerita",
+    "film",
+    "hobi",
+    "makanan",
+    "minuman",
+    "travel",
+    "jalan-jalan",
+    "musik",
+    "game",
+    "favorit",
+    "suka",
+    "apa kabar",
+    "kamu suka",
+    "kamu hobinya",
+    "story",
+    "movie",
+    "hobbies",
+    "food",
+    "drinks",
+    "traveling",
+    "music",
+    "games",
+    "favorite",
+    "like",
+    "how are you",
   ];
-  if (outOfContextKeywords.some(keyword => message.includes(keyword))) {
+  if (outOfContextKeywords.some((keyword) => message.includes(keyword))) {
     return "Maaf, saya hanya bisa menjawab pertanyaan seputar portofolio ini. Jika Anda ingin bertanya tentang pemiliknya, silakan ajukan pertanyaan lain. / Sorry, I can only answer questions about this portfolio. If you want to ask about its owner, please ask another question.";
   }
 
-  // Default
+  // Jawaban Default
   return "Maaf, saya tidak mengerti pertanyaan Anda. Coba tanyakan hal lain seputar portofolio ini. / Sorry, I don't understand your question. Please try asking something else about this portfolio.";
 };

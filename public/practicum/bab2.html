@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAB 2 - Latihan HTML Lanjutan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura" />
+    <style>
+      body {
+        font-family: "Futura";
+      }
+      .box-shadow {
+        box-shadow: 4px 4px 0px #000;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black antialiased transition-colors duration-300">
+    <header class="bg-black text-white text-center p-6 border-b-2 border-black box-shadow mb-10">
+      <h1 class="text-4xl font-extrabold tracking-wide">Praktikum Teknologi Web - BAB 2</h1>
+      <nav class="mt-4">
+        <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+          <li><a href="bab1.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 1</a></li>
+          <li><a href="bab2.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 2</a></li>
+          <li><a href="bab3.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 3</a></li>
+          <li><a href="bab4.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 4</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container mx-auto p-8 bg-white border-2 border-black rounded-3xl box-shadow">
+      <main class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Menu Makanan Italia</h2>
+        <ul class="list-disc list-inside ml-4 text-lg">
+          <li class="hover:bg-black hover:text-white p-2 rounded-lg transition-colors duration-200">Pizza</li>
+          <li class="hover:bg-black hover:text-white p-2 rounded-lg transition-colors duration-200">Spagetti</li>
+        </ul>
+      </main>
+      <main class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Menu Minuman Nusantara</h2>
+        <ul class="list-disc list-inside ml-4 text-lg">
+          <li class="hover:bg-black hover:text-white p-2 rounded-lg transition-colors duration-200">Es Ancruk</li>
+          <li class="hover:bg-black hover:text-white p-2 rounded-lg transition-colors duration-200">Es Kuwud</li>
+        </ul>
+      </main>
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Daftar Menu Makanan dan Minuman</h2>
+        <div class="overflow-x-auto border-2 border-black rounded-xl box-shadow">
+          <table class="w-full table-auto">
+            <thead class="bg-black text-white">
+              <tr>
+                <th rowspan="2" class="px-6 py-3 text-left font-semibold border-b border-white border-r">No</th>
+                <th colspan="3" class="px-6 py-3 text-center font-semibold border-b border-white">Menu</th>
+              </tr>
+              <tr>
+                <th class="px-6 py-3 text-left font-semibold border-r border-white">Nama</th>
+                <th class="px-6 py-3 text-left font-semibold border-r border-white">Kategori</th>
+                <th class="px-6 py-3 text-left font-semibold">Harga</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-black bg-white text-black">
+              <tr class="hover:bg-black hover:text-white transition-colors duration-200">
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">1</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Nasi Goreng</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Makanan</td>
+                <td class="px-6 py-4 whitespace-nowrap">Rp 10.000</td>
+              </tr>
+              <tr class="hover:bg-black hover:text-white transition-colors duration-200">
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">2</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Mie Ayam</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Makanan</td>
+                <td class="px-6 py-4 whitespace-nowrap">Rp 15.000</td>
+              </tr>
+              <tr class="hover:bg-black hover:text-white transition-colors duration-200">
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">3</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Sate Ayam</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Makanan</td>
+                <td class="px-6 py-4 whitespace-nowrap">Rp 12.000</td>
+              </tr>
+              <tr class="hover:bg-black hover:text-white transition-colors duration-200">
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">1</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Es Jeruk</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Minuman</td>
+                <td class="px-6 py-4 whitespace-nowrap">Rp 7.000</td>
+              </tr>
+              <tr class="hover:bg-black hover:text-white transition-colors duration-200">
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">2</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Es Teh</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Minuman</td>
+                <td class="px-6 py-4 whitespace-nowrap">Rp 5.000</td>
+              </tr>
+              <tr class="hover:bg-black hover:text-white transition-colors duration-200">
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">3</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Milo</td>
+                <td class="px-6 py-4 whitespace-nowrap border-r border-black">Minuman</td>
+                <td class="px-6 py-4 whitespace-nowrap">Rp 10.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-black text-white text-center p-4 mt-10 border-t-2 border-black box-shadow">
+      <p>&copy; 2025 Topan Bagus | Didesain dengan Tailwind CSS.</p>
+    </footer>
+  </body>
+</html>

@@ -14,17 +14,15 @@ const projects = [
   },
   {
     title: "Web Technology Practicum",
-    description:
-      "A project to build a responsive, interactive webpage using HTML for structure, Tailwind CSS for styling, and JQuery for functionality like form validation.",
+    description: "A project to build a responsive, interactive webpage using HTML for structure, Tailwind CSS for styling, and JQuery for functionality like form validation.",
     techStack: ["HTML", "Tailwind CSS CDN", "JQuery CDN"],
-    image: "/project/-.png",
-    link: "https://-/",
+    image: "/project/tekweb.png",
+    link: "/practicum/bab1.html",
     github: "https://-",
   },
   {
     title: "Batur Museum Edu-tourism App",
-    description:
-      "The Batur Museum app prototype enhances visitor interaction with digital ticketing, interactive guides, and an AI chatbot for an improved edu-tourism experience.",
+    description: "The Batur Museum app prototype enhances visitor interaction with digital ticketing, interactive guides, and an AI chatbot for an improved edu-tourism experience.",
     techStack: ["Augmented Reality", "AI Chatbot", "Figma"],
     image: "/project/batur.png",
     link: "https://go.undiksha.ac.id/GeOParK",
@@ -32,8 +30,7 @@ const projects = [
   },
   {
     title: "Inventory App - LoanHub",
-    description:
-      "A lending app created to address student organization complaints, aiming to improve the efficiency and transparency of borrowing items.",
+    description: "A lending app created to address student organization complaints, aiming to improve the efficiency and transparency of borrowing items.",
     techStack: ["React", "Javascript", "Firebase", "CSS"],
     image: "/project/loanhub.png",
     link: "https://loanhub.vercel.app",
@@ -41,8 +38,7 @@ const projects = [
   },
   {
     title: "Innovative App - Eco Companion",
-    description:
-      "Eco-Companion is a mobile app for environmental conservation, find recycling points, join eco-activities, and earn Eco-Points for sustainable rewards.",
+    description: "Eco-Companion is a mobile app for environmental conservation, find recycling points, join eco-activities, and earn Eco-Points for sustainable rewards.",
     techStack: ["Figma"],
     image: "/project/eco.png",
     link: "https://go.undiksha.ac.id/gFaMX",
@@ -50,8 +46,7 @@ const projects = [
   },
   {
     title: "App Mockup - Kick Avenue",
-    description:
-      "Created a high-fidelity app mockup for Kick Avenue, a luxury goods marketplace. The project included developing user workflows, wireframes, and final designs.",
+    description: "Created a high-fidelity app mockup for Kick Avenue, a luxury goods marketplace. The project included developing user workflows, wireframes, and final designs.",
     techStack: ["Figma"],
     image: "/project/kickave.png",
     link: "https://go.undiksha.ac.id/EXojH",
@@ -122,26 +117,18 @@ const Projects = () => {
   return (
     <div className="py-12 md:py-20 bg-white font-[Futura]">
       <div className="container mx-auto px-6 md:px-12 lg:px-10 max-w-screen-2xl">
-        <h2
-          ref={headingRef}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-12 text-black"
-        >
+        <h2 ref={headingRef} className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-12 text-black">
           {typedText}
           <span className="inline-block w-[2px] h-10 align-middle bg-black ml-1 animate-blink" />
         </h2>
 
-        {/* Grid daftar projects */}
+        {/* Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-black text-white rounded-3xl shadow-xl transition-transform transform hover:scale-105 duration-300 overflow-hidden p-6 relative"
-            >
+            <div key={index} className="bg-black text-white rounded-3xl shadow-xl transition-transform transform hover:scale-105 duration-300 overflow-hidden p-6 relative">
               <div className="flex flex-col h-full pb-32">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-400 mb-4 leading-relaxed text-justify">
-                  {project.description}
-                </p>
+                <p className="text-sm text-gray-400 mb-4 leading-relaxed text-justify">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.techStack.map((tech, i) => (
@@ -154,17 +141,20 @@ const Projects = () => {
                 <div className="flex space-x-4 mb-4">
                   {project.link && (
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-sm text-gray-400 hover:text-white transition-colors duration-300">
-                      <FaLink className="h-4 w-4" /><span>Live Demo</span>
+                      <FaLink className="h-4 w-4" />
+                      <span>Live Demo</span>
                     </a>
                   )}
                   {project.github && !project.figma && (
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-sm text-gray-400 hover:text-white transition-colors duration-300">
-                      <FaGithub className="h-4 w-4" /><span>Repository</span>
+                      <FaGithub className="h-4 w-4" />
+                      <span>Repository</span>
                     </a>
                   )}
                   {project.figma && (
                     <a href={project.figma} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-sm text-gray-400 hover:text-white transition-colors duration-300">
-                      <FaFigma className="h-4 w-4" /><span>Prototype</span>
+                      <FaFigma className="h-4 w-4" />
+                      <span>Prototype</span>
                     </a>
                   )}
                 </div>

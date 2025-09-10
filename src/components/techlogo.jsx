@@ -1,12 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs,
-  FaGitAlt, FaGithub, FaPhp, FaPython, FaJava
-} from "react-icons/fa";
-import {
-  SiTailwindcss, SiLaravel, SiPostman,
-  SiMysql, SiDocker, SiKubernetes
-} from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaPhp, FaPython, FaJava } from "react-icons/fa";
+import { SiTailwindcss, SiLaravel, SiPostman, SiMysql, SiDocker, SiKubernetes } from "react-icons/si";
 
 function TechLogos() {
   // Daftar icon
@@ -32,12 +26,12 @@ function TechLogos() {
   const containerRef = useRef(null);
   const [paused, setPaused] = useState(false);
 
-  // variabel untuk animasi scroll otomatis
+  // variabel untuk animasi
   const speedRef = useRef(0.5);
   const directionRef = useRef(1);
   const posRef = useRef(0);
 
-  // Loop animasi jalan otomatis
+  // Loop animasi
   useEffect(() => {
     let animationFrame;
 
@@ -87,13 +81,7 @@ function TechLogos() {
 
   return (
     <div className="relative w-full overflow-hidden bg-white py-4">
-      <div
-        ref={containerRef}
-        className="flex space-x-10 text-5xl cursor-pointer"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        style={{ willChange: "transform" }}
-      >
+      <div ref={containerRef} className="flex space-x-10 text-5xl cursor-pointer" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} style={{ willChange: "transform" }}>
         {logos.concat(logos).map((icon, idx) => (
           <div key={idx} className="flex items-center justify-center">
             {icon}
