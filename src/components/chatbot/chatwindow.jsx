@@ -126,7 +126,7 @@ const ChatWindow = ({ onClose }) => {
             {msg.sender === "bot" && (
               <div style={{ display: "flex", alignItems: "flex-start", marginBottom: "5px" }}>
                 <img
-                  src="/amoraaa.png"
+                  src="amoraaa.png"
                   alt="Bot Profile"
                   style={{
                     width: "30px",
