@@ -3,10 +3,38 @@ import Reviews from "../components/review";
 
 /** Data pengalaman kerja */
 const experiences = [
-  { company: "Universitas Pendidikan Ganesha", status: "Part-Time", position: "Student Employee", location: "Bali", year: "2025 - Present", description: "Lorem Ipsum..." },
-  { company: "PT Rajawali Adikarya", status: "Contract", position: "Technical Consultant", location: "Jakarta", year: "2021 - 2023", description: "Lorem Ipsum..." },
-  { company: "Fibo Sports", status: "Internship", position: "Graphic Designer", location: "Jakarta", year: "Jan - Mar 2020", description: "Lorem Ipsum..." },
-  { company: "Notforhumanity", status: "Self-Employed", position: "Creative Director", location: "Jakarta", year: "2020 - 2025", description: "Lorem Ipsum..." },
+  {
+    company: "Universitas Pendidikan Ganesha",
+    status: "Part-Time",
+    position: "Student Employee",
+    location: "Bali",
+    year: "Sep 2025 - Present",
+    description: "Maintained strong GPA while contributing to academic volunteer activities.",
+  },
+  {
+    company: "PT Rajawali Adikarya",
+    status: "Contract",
+    position: "Technical Consultant",
+    location: "Jakarta",
+    year: "2021 - 2023",
+    description: "Handled backend architecture, technical support, and database administration.",
+  },
+  {
+    company: "Fibo Sports",
+    status: "Internship",
+    position: "Graphic Designer",
+    location: "Jakarta",
+    year: "Jan - Mar 2020",
+    description: "Managed design, content creation, and Instagram marketing strategy.",
+  },
+  {
+    company: "Notforhumanity",
+    status: "Self-Employed",
+    position: "Creative Director",
+    location: "Jakarta",
+    year: "2020 - 2025",
+    description: "Founded and managed brand across design, production, and marketing.",
+  },
 ];
 
 export default function TimelineAbout() {

@@ -6,6 +6,7 @@
     <title>BAB 1 - Pengenalan Web & HTML Dasar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <style>
       body {
         font-family: "Futura";
@@ -20,8 +21,15 @@
     </style>
   </head>
   <body class="bg-white text-black antialiased transition-colors duration-300">
-    <header class="bg-black text-white text-center p-6 border-b-2 border-black box-shadow mb-10">
-      <h1 class="text-4xl font-extrabold tracking-wide">Praktikum Teknologi Web - BAB 1</h1>
+    <header class="bg-black text-white text-center p-6 border-b-2 border-black box-shadow mb-10 relative">
+      <div class="flex items-center justify-center relative">
+        <a href="/" class="absolute left-20 mt-10 p-5 rounded-full bg-white text-black transition-colors duration-300 hover:bg-gray-200 box-shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </a>
+        <h1 class="text-4xl font-extrabold tracking-wide">Praktikum Teknologi Web - BAB 1</h1>
+      </div>
       <nav class="mt-4">
         <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
           <li><a href="bab1.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 1</a></li>
@@ -57,7 +65,7 @@
           <tbody class="divide-y divide-black bg-white text-black">
             <tr class="hover:bg-black hover:text-white transition-colors duration-200">
               <td class="px-6 py-4 whitespace-nowrap border-r border-black">Sekolah Dasar</td>
-              <td class="px-6 py-4 whitespace-nowrap border-r border-black">SDN Kedoya Utara 09 Jakarta</td>
+              <td class="px-6 py-4 whitespace-nowrap border-r border-black">SDN 09 Jakarta</td>
               <td class="px-6 py-4 whitespace-nowrap">Kedoya Utara, Jakarta Barat</td>
             </tr>
             <tr class="hover:bg-black hover:text-white transition-colors duration-200">

@@ -9,7 +9,7 @@ const projects = [
       "A personal portfolio website built with Vite.js for an efficient workflow and styled with Tailwind CSS for a clean, responsive design. The site uses JavaScript to add interactive animations, showcasing projects and skills.",
     techStack: ["Vite.js", "React", "Tailwind CSS", "JavaScript", "Chatbot API"],
     image: "/project/porto.png",
-    link: "https://-/",
+    link: "/",
     github: "https://github.com/Topaanbgs/Portofolio",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     techStack: ["HTML", "Tailwind CSS CDN", "JQuery CDN"],
     image: "/project/tekweb.png",
     link: "/practicum/bab1.html",
-    github: "https://-",
+    github: "https://github.com/Topaanbgs/Portofolio/tree/main/public/practicum",
   },
   {
     title: "Batur Museum Edu-tourism App",

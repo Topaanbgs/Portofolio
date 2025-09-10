@@ -73,7 +73,7 @@ export const getAIResponse = (userMessage) => {
     },
     {
       keywords: ["kuliah", "sekolah", "pendidikan", "lulus"],
-      response: "Dia adalah mahasiswa aktif semester 5 program studi Ilmu Komputer, Universitas Pendidikan Ganesha, dengan IPK 3.68.",
+      response: "Dia adalah mahasiswa aktif semester 5 program studi Ilmu Komputer, Universitas Pendidikan Ganesha, dengan IPK 3.74.",
     },
     {
       keywords: ["pekerjaan", "kerja", "bekerja", "status", "menganggur"],
