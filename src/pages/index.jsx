@@ -111,7 +111,7 @@ function Index() {
                   I transform complex challenges into <br className="hidden sm:block" /> effective digital solutions.
                 </p>
                 <a
-                  href="/Curriculum Vitae.pdf"
+                  href="Curriculum Vitae.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 w-fit px-5 py-2 text-sm md:text-base font-medium text-black bg-white rounded border border-transparent hover:border-white hover:bg-black hover:text-white transition-colors duration-300"
