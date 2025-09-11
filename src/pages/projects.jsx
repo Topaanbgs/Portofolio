@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLink, FaFigma } from "react-icons/fa";
 
-/** Data daftar project */
+// Project data
 const projects = [
   {
     title: "Portofolio Web",
@@ -61,7 +61,7 @@ const Projects = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const headingRef = useRef(null);
 
-  /** Trigger typing effect */
+  // Trigger typing effect on intersection
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -80,7 +80,7 @@ const Projects = () => {
     };
   }, [isTyping, typedText]);
 
-  /** Trigger efek delete */
+  // Trigger delete effect on scroll
   useEffect(() => {
     const handleScroll = () => {
       if (!isDeleting && !isTyping && typedText === fullText) {
@@ -91,26 +91,26 @@ const Projects = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [typedText, isDeleting, isTyping, fullText]);
 
-  /** Efek typing teks */
+  // Handle typing and deleting animation
   useEffect(() => {
     let timeout;
-
-    if (isTyping && typedText.length < fullText.length) {
-      timeout = setTimeout(() => {
-        setTypedText(fullText.slice(0, typedText.length + 1));
-      }, 150);
-    } else if (isTyping && typedText.length === fullText.length) {
-      setIsTyping(false);
+    if (isTyping) {
+      if (typedText.length < fullText.length) {
+        timeout = setTimeout(() => {
+          setTypedText(fullText.slice(0, typedText.length + 1));
+        }, 150);
+      } else {
+        setIsTyping(false);
+      }
+    } else if (isDeleting) {
+      if (typedText.length > 0) {
+        timeout = setTimeout(() => {
+          setTypedText(fullText.slice(0, typedText.length - 1));
+        }, 80);
+      } else {
+        setIsDeleting(false);
+      }
     }
-
-    if (isDeleting && typedText.length > 0) {
-      timeout = setTimeout(() => {
-        setTypedText(fullText.slice(0, typedText.length - 1));
-      }, 80);
-    } else if (isDeleting && typedText.length === 0) {
-      setIsDeleting(false);
-    }
-
     return () => clearTimeout(timeout);
   }, [typedText, isTyping, isDeleting, fullText]);
 
@@ -122,11 +122,10 @@ const Projects = () => {
           <span className="inline-block w-[2px] h-10 align-middle bg-black ml-1 animate-blink" />
         </h2>
 
-        {/* Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, index) => (
-            <div key={index} className="bg-black text-white rounded-3xl shadow-xl transition-transform transform hover:scale-105 duration-300 overflow-hidden p-6 relative">
-              <div className="flex flex-col h-full pb-32">
+            <div key={index} className="bg-black text-white rounded-3xl shadow-xl transition-transform transform hover:scale-105 duration-300 overflow-hidden relative flex flex-col">
+              <div className="flex flex-col flex-grow p-6">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                 <p className="text-sm text-gray-400 mb-4 leading-relaxed text-justify">{project.description}</p>
 
@@ -159,10 +158,8 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-
-              {/* Preview Gambar */}
-              <div className="absolute bottom-0 right-0 h-auto rounded-lg overflow-hidden shadow-md transform translate-x-1/4 translate-y-1/4">
-                <img src={project.image} alt={`Preview of ${project.title}`} className="w-full h-auto object-cover" />
+              <div className="relative w-full h-48 overflow-hidden rounded-b-2xl">
+                <img src={project.image} alt={`Preview of ${project.title}`} className="absolute w-[100%] h-[100%] rounded-lg object-cover object-top transform translate-x-1/4 translate-y-1/6" />
               </div>
             </div>
           ))}

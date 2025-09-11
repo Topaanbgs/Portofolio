@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-// Animasi loading bar
 function Load({ onFinish }) {
   const [progress, setProgress] = useState(0);
-
   const barHeights = ["h-4", "h-8", "h-12", "h-8", "h-4"];
 
+  // Loading bar animation
   useEffect(() => {
     const totalSteps = 100;
     const intervalTime = 20;
@@ -31,14 +30,7 @@ function Load({ onFinish }) {
           const fillThreshold = ((i + 1) / barHeights.length) * 100;
           const filled = progress >= fillThreshold;
 
-          return (
-            <div
-              key={i}
-              className={`w-3 md:w-4 border-2 border-white transition-all duration-300 ${
-                filled ? "bg-white" : "bg-black"
-              } ${height}`}
-            />
-          );
+          return <div key={i} className={`w-3 md:w-4 border-2 border-white transition-all duration-300 ${filled ? "bg-white" : "bg-black"} ${height}`} />;
         })}
       </div>
     </div>

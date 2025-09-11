@@ -3,7 +3,6 @@ import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaPhp,
 import { SiTailwindcss, SiLaravel, SiPostman, SiMysql, SiDocker, SiKubernetes } from "react-icons/si";
 
 function TechLogos() {
-  // Daftar icon
   const logos = [
     <FaHtml5 className="text-orange-600" />,
     <FaCss3Alt className="text-blue-600" />,
@@ -26,24 +25,19 @@ function TechLogos() {
   const containerRef = useRef(null);
   const [paused, setPaused] = useState(false);
 
-  // variabel untuk animasi
   const speedRef = useRef(0.5);
   const directionRef = useRef(1);
   const posRef = useRef(0);
 
-  // Loop animasi
+  // Loop animation for tech logos
   useEffect(() => {
     let animationFrame;
-
     const tick = () => {
       if (!paused && containerRef.current) {
         posRef.current += speedRef.current * directionRef.current;
-
-        // Seamless loop
         const totalWidth = containerRef.current.scrollWidth / 2;
         if (posRef.current > 0) posRef.current = -totalWidth;
         if (posRef.current < -totalWidth) posRef.current = 0;
-
         containerRef.current.style.transform = `translateX(${posRef.current}px)`;
       }
       animationFrame = requestAnimationFrame(tick);
@@ -53,12 +47,11 @@ function TechLogos() {
     return () => cancelAnimationFrame(animationFrame);
   }, [paused]);
 
-  // Reaksi saat scroll
+  // Handle scroll-based speed and direction
   useEffect(() => {
     let timeout;
     const handleScroll = () => {
       const currentY = window.scrollY;
-
       if (currentY > (window.lastScrollY || 0)) {
         directionRef.current = 1;
         speedRef.current = 2;
@@ -81,9 +74,9 @@ function TechLogos() {
 
   return (
     <div className="relative w-full overflow-hidden bg-white py-4">
-      <div ref={containerRef} className="flex space-x-10 text-5xl cursor-pointer" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} style={{ willChange: "transform" }}>
+      <div ref={containerRef} className="flex space-x-2 sm:space-x-10 text-2xl sm:text-3xl md:text-5xl cursor-pointer" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} style={{ willChange: "transform" }}>
         {logos.concat(logos).map((icon, idx) => (
-          <div key={idx} className="flex items-center justify-center">
+          <div key={idx} className="flex items-center justify-center min-w-[40px] drop-shadow-md">
             {icon}
           </div>
         ))}
