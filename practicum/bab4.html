@@ -17,17 +17,22 @@
     </style>
   </head>
   <body class="bg-white text-black antialiased transition-colors duration-300">
-    <header class="bg-black text-white text-center p-6 border-b-2 border-black box-shadow mb-10 relative">
-      <div class="flex items-center justify-center relative">
-        <a href="../#/" class="absolute left-20 mt-10 p-5 rounded-full bg-white text-black transition-colors duration-300 hover:bg-gray-200 box-shadow">
+    <header class="bg-black text-white p-6 border-b-2 border-black box-shadow mb-10 relative">
+      <div class="flex flex-col md:flex-row items-center justify-center relative">
+        <a href="../#/" class="absolute left-2 md:left-20 top-10 md:top-4 p-2 md:p-5 rounded-full bg-white text-black hover:bg-gray-200 box-shadow transition-colors duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
         </a>
-        <h1 class="text-4xl font-extrabold tracking-wide">Praktikum Teknologi Web - BAB 1</h1>
+        <h1 class="text-xl md:text-4xl font-extrabold tracking-wide text-center md:text-left">Praktikum Teknologi Web - BAB 4</h1>
+        <button id="menu-btn" class="md:hidden mt-4 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
-      <nav class="mt-4">
-        <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+      <nav>
+        <ul id="menu" class="hidden md:flex flex-col md:flex-row justify-center md:justify-center text-xl space-y-2 md:space-y-0 md:space-x-8 text-center mt-4 md:mt-4">
           <li><a href="bab1.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 1</a></li>
           <li><a href="bab2.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 2</a></li>
           <li><a href="bab3.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 3</a></li>
@@ -36,10 +41,10 @@
       </nav>
     </header>
 
-    <div class="container mx-auto p-8 bg-white border-2 border-black rounded-3xl box-shadow">
+    <div class="container mx-auto p-4 md:p-8 bg-white border-2 border-black rounded-3xl box-shadow">
       <h2 class="text-3xl font-bold mb-6 text-center">Kalkulator Luas Bangun Datar</h2>
       <div class="max-w-xl mx-auto">
-        <div class="bg-white p-6 border-2 border-black rounded-xl box-shadow">
+        <div class="bg-white p-4 md:p-6 border-2 border-black rounded-xl box-shadow">
           <div class="mb-4">
             <label for="shape-select" class="block font-semibold mb-2">Pilih Bangun Datar:</label>
             <select id="shape-select" class="w-full px-4 py-2 bg-white border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200">
@@ -48,6 +53,8 @@
               <option value="rectangle">Persegi Panjang</option>
               <option value="triangle">Segitiga</option>
               <option value="circle">Lingkaran</option>
+              <option value="trapezoid">Trapesium</option>
+              <option value="rhombus">Belah Ketupat</option>
             </select>
           </div>
 
@@ -75,11 +82,29 @@
             <input type="number" id="circle-radius" placeholder="Masukkan jari-jari" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200" />
           </div>
 
+          <div id="trapezoid-inputs" class="hidden mb-4">
+            <label for="trapezoid-side1" class="block font-semibold mb-2">Sisi Atas:</label>
+            <input type="number" id="trapezoid-side1" placeholder="Masukkan sisi atas" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200 mb-4" />
+            <label for="trapezoid-side2" class="block font-semibold mb-2">Sisi Bawah:</label>
+            <input type="number" id="trapezoid-side2" placeholder="Masukkan sisi bawah" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200 mb-4" />
+            <label for="trapezoid-height" class="block font-semibold mb-2">Tinggi:</label>
+            <input type="number" id="trapezoid-height" placeholder="Masukkan tinggi" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200" />
+          </div>
+
+          <div id="rhombus-inputs" class="hidden mb-4">
+            <label for="rhombus-diag1" class="block font-semibold mb-2">Diagonal 1:</label>
+            <input type="number" id="rhombus-diag1" placeholder="Masukkan diagonal 1" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200 mb-4" />
+            <label for="rhombus-diag2" class="block font-semibold mb-2">Diagonal 2:</label>
+            <input type="number" id="rhombus-diag2" placeholder="Masukkan diagonal 2" class="w-full px-4 py-2 border-2 border-black rounded-none focus:outline-none focus:ring-2 focus:ring-black transition-colors duration-200" />
+          </div>
+
+          <div id="formula-note" class="hidden text-sm md:text-base text-center text-gray-700 font-medium mb-4"></div>
+
           <button id="calculate-btn" class="w-full bg-black text-white font-bold py-3 px-4 rounded-none border-2 border-black hover:bg-white hover:text-black transition-colors duration-200 box-shadow">Hitung Luas</button>
 
           <div class="mt-6 p-6 bg-black text-white rounded-xl border-2 border-black text-center hidden box-shadow transition-opacity duration-500" id="result-box">
             <h3 class="text-xl font-semibold mb-2">Hasil:</h3>
-            <p id="result-text" class="text-4xl font-extrabold"></p>
+            <p id="result-text" class="text-3xl md:text-4xl font-extrabold"></p>
           </div>
         </div>
       </div>
@@ -87,25 +112,39 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+      // SCRIPT MENU HAMBURGER
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // SCRIPT KALKULATOR
       $(document).ready(function () {
         const resultBox = $("#result-box");
         const resultText = $("#result-text");
         const inputFields = $(".hidden.mb-4");
+        const formulaNote = $("#formula-note");
+
+        const formulas = {
+          square: "Rumus: Sisi × Sisi",
+          rectangle: "Rumus: Panjang × Lebar",
+          triangle: "Rumus: ½ × Alas × Tinggi",
+          circle: "Rumus: &pi; × Jari-jari²",
+          trapezoid: "Rumus: ½ × (Sisi Atas + Sisi Bawah) × Tinggi",
+          rhombus: "Rumus: ½ × Diagonal 1 × Diagonal 2",
+        };
 
         $("#shape-select").on("change", function () {
           const selectedShape = $(this).val();
           inputFields.hide();
+          formulaNote.hide();
           resultBox.hide();
           $("#result-box").removeClass("opacity-100").addClass("opacity-0");
 
-          if (selectedShape === "square") {
-            $("#square-inputs").show();
-          } else if (selectedShape === "rectangle") {
-            $("#rectangle-inputs").show();
-          } else if (selectedShape === "triangle") {
-            $("#triangle-inputs").show();
-          } else if (selectedShape === "circle") {
-            $("#circle-inputs").show();
+          if (selectedShape in formulas) {
+            $("#" + selectedShape + "-inputs").show();
+            formulaNote.html(formulas[selectedShape]).show();
           }
         });
 
@@ -143,6 +182,23 @@
               isValid = false;
             } else {
               area = Math.PI * radius * radius;
+            }
+          } else if (selectedShape === "trapezoid") {
+            const side1 = parseFloat($("#trapezoid-side1").val());
+            const side2 = parseFloat($("#trapezoid-side2").val());
+            const height = parseFloat($("#trapezoid-height").val());
+            if (isNaN(side1) || side1 <= 0 || isNaN(side2) || side2 <= 0 || isNaN(height) || height <= 0) {
+              isValid = false;
+            } else {
+              area = 0.5 * (side1 + side2) * height;
+            }
+          } else if (selectedShape === "rhombus") {
+            const diag1 = parseFloat($("#rhombus-diag1").val());
+            const diag2 = parseFloat($("#rhombus-diag2").val());
+            if (isNaN(diag1) || diag1 <= 0 || isNaN(diag2) || diag2 <= 0) {
+              isValid = false;
+            } else {
+              area = 0.5 * diag1 * diag2;
             }
           } else {
             isValid = false;
