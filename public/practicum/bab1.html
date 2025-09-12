@@ -21,17 +21,22 @@
     </style>
   </head>
   <body class="bg-white text-black antialiased transition-colors duration-300">
-    <header class="bg-black text-white text-center p-6 border-b-2 border-black box-shadow mb-10 relative">
-      <div class="flex items-center justify-center relative">
-        <a href="../#/" class="absolute left-20 mt-10 p-5 rounded-full bg-white text-black transition-colors duration-300 hover:bg-gray-200 box-shadow">
+    <header class="bg-black text-white p-6 border-b-2 border-black box-shadow mb-10 relative">
+      <div class="flex flex-col md:flex-row items-center justify-center relative">
+        <a href="../#/" class="absolute left-2 md:left-20 top-10 md:top-4 p-2 md:p-5 rounded-full bg-white text-black hover:bg-gray-200 box-shadow transition-colors duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
         </a>
-        <h1 class="text-4xl font-extrabold tracking-wide">Praktikum Teknologi Web - BAB 1</h1>
+        <h1 class="text-xl md:text-4xl font-extrabold tracking-wide text-center md:text-left">Praktikum Teknologi Web - BAB 1</h1>
+        <button id="menu-btn" class="md:hidden mt-4 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
-      <nav class="mt-4">
-        <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+      <nav>
+        <ul id="menu" class="hidden md:flex flex-col md:flex-row justify-center md:justify-center text-xl space-y-2 md:space-y-0 md:space-x-8 text-center mt-4 md:mt-4">
           <li><a href="bab1.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 1</a></li>
           <li><a href="bab2.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 2</a></li>
           <li><a href="bab3.html" class="hover:text-gray-400 font-bold transition-colors duration-300">BAB 3</a></li>
@@ -40,10 +45,10 @@
       </nav>
     </header>
 
-    <div class="container mx-auto p-8 bg-white border-2 border-black rounded-3xl box-shadow">
-      <h2 class="text-3xl font-bold mb-6">Biodata Mahasiswa</h2>
+    <div class="container mx-auto px-4 md:px-8 py-6 md:py-8 bg-white border-2 border-black rounded-3xl box-shadow">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center md:text-left">Biodata Mahasiswa</h2>
       <div class="flex flex-col md:flex-row items-center md:items-start mb-8">
-        <img src="profilepict.jpeg" alt="Foto Mahasiswa" class="w-32 h-32 rounded-full border-4 border-black mr-0 md:mr-8 mb-4 md:mb-0 transform transition-transform hover:scale-105 duration-300 object-cover" />
+        <img src="profilepict.jpeg" alt="Foto Mahasiswa" class="w-32 h-32 md:w-36 md:h-36 rounded-full border-4 border-black mb-4 md:mb-0 md:mr-8 transform transition-transform hover:scale-105 object-cover" />
         <div class="text-center md:text-left">
           <p class="mb-2 text-lg"><b class="font-semibold">Nama:</b> Topan Bagus Prasetyo</p>
           <p class="mb-2 text-lg"><b class="font-semibold">NIM:</b> 2315101032</p>
@@ -52,31 +57,31 @@
         </div>
       </div>
 
-      <h3 class="text-2xl font-bold mb-4">Riwayat Pendidikan</h3>
+      <h3 class="text-xl md:text-2xl font-bold mb-4 text-center md:text-left">Riwayat Pendidikan</h3>
       <div class="overflow-x-auto border-2 border-black box-shadow rounded-xl">
-        <table class="w-full table-auto">
+        <table class="w-full table-auto min-w-[500px]">
           <thead class="bg-black text-white">
             <tr>
-              <th class="px-6 py-3 text-left text-sm font-semibold tracking-wide border-r border-white">Jenjang</th>
-              <th class="px-6 py-3 text-left text-sm font-semibold tracking-wide border-r border-white">Nama Sekolah</th>
-              <th class="px-6 py-3 text-left text-sm font-semibold tracking-wide">Alamat Sekolah</th>
+              <th class="px-4 md:px-6 py-2 md:py-3 text-left text-sm md:text-base font-semibold tracking-wide border-r border-white">Jenjang</th>
+              <th class="px-4 md:px-6 py-2 md:py-3 text-left text-sm md:text-base font-semibold tracking-wide border-r border-white">Nama Sekolah</th>
+              <th class="px-4 md:px-6 py-2 md:py-3 text-left text-sm md:text-base font-semibold tracking-wide">Alamat Sekolah</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-black bg-white text-black">
             <tr class="hover:bg-black hover:text-white transition-colors duration-200">
-              <td class="px-6 py-4 whitespace-nowrap border-r border-black">Sekolah Dasar</td>
-              <td class="px-6 py-4 whitespace-nowrap border-r border-black">SDN 09 Jakarta</td>
-              <td class="px-6 py-4 whitespace-nowrap">Kedoya Utara, Jakarta Barat</td>
+              <td class="px-4 md:px-6 py-2 md:py-4 whitespace-nowrap border-r border-black">Sekolah Dasar</td>
+              <td class="px-4 md:px-6 py-2 md:py-4 whitespace-nowrap border-r border-black">SDN 09 Jakarta</td>
+              <td class="px-4 md:px-6 py-2 md:py-4 whitespace-nowrap">Kedoya Utara, Jakarta Barat</td>
             </tr>
             <tr class="hover:bg-black hover:text-white transition-colors duration-200">
-              <td class="px-6 py-4 whitespace-nowrap border-r border-black">Sekolah Menengah Pertama</td>
-              <td class="px-6 py-4 whitespace-nowrap border-r border-black">SMPN 197 Jakarta</td>
-              <td class="px-6 py-4 whitespace-nowrap">Kedoya Selatan, Jakarta Barat</td>
+              <td class="px-4 md:px-6 py-2 md:py-4 whitespace-nowrap border-r border-black">Sekolah Menengah Pertama</td>
+              <td class="px-4 md:px-6 py-2 md:py-4 whitespace-nowrap border-r border-black">SMPN 197 Jakarta</td>
+              <td class="px-4 md:px-6 py-2 md:py-4 whitespace-nowrap">Kedoya Selatan, Jakarta Barat</td>
             </tr>
             <tr class="hover:bg-black hover:text-white transition-colors duration-200">
-              <td class="px-6 py-4 whitespace-nowrap border-r border-black">Sekolah Menengah Kejuruan</td>
-              <td class="px-6 py-4 whitespace-nowrap border-r border-black">SMKN 17 Jakarta</td>
-              <td class="px-6 py-4 whitespace-nowrap">Slipi, Jakarta Barat</td>
+              <td class="px-4 md:px-6 py-2 md:py-4 whitespace-nowrap border-r border-black">Sekolah Menengah Kejuruan</td>
+              <td class="px-4 md:px-6 py-2 md:py-4 whitespace-nowrap border-r border-black">SMKN 17 Jakarta</td>
+              <td class="px-4 md:px-6 py-2 md:py-4 whitespace-nowrap">Slipi, Jakarta Barat</td>
             </tr>
           </tbody>
         </table>
@@ -86,5 +91,13 @@
     <footer class="bg-black text-white text-center p-4 mt-10 border-t-2 border-black box-shadow">
       <p>&copy; 2025 Topan Bagus | Didesain dengan Tailwind CSS.</p>
     </footer>
+
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
