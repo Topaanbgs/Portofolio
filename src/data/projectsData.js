@@ -1,0 +1,51 @@
+export const projectsData = [
+  {
+    title: "Portofolio Web",
+    description:
+      "A personal portfolio website built with Vite.js for an efficient workflow and styled with Tailwind CSS for a clean, responsive design. The site uses JavaScript to add interactive animations, showcasing projects and skills.",
+    techStack: ["Vite.js", "React", "Tailwind CSS", "JavaScript", "Chatbot API"],
+    image: "project/porto.png",
+    link: "https://topaanbgs.github.io/Portofolio",
+    github: "https://github.com/Topaanbgs/Portofolio",
+  },
+  {
+    title: "Web Technology Practicum",
+    description: "A project to build a responsive, interactive webpage using HTML for structure, Tailwind CSS for styling, and JQuery for functionality like form validation.",
+    techStack: ["HTML", "Tailwind CSS CDN", "JQuery CDN"],
+    image: "project/tekweb.png",
+    link: "practicum/bab1.html",
+    github: "https://github.com/Topaanbgs/Portofolio/tree/main/public/practicum",
+  },
+  {
+    title: "Batur Museum Edu-tourism App",
+    description: "The Batur Museum app prototype enhances visitor interaction with digital ticketing, interactive guides, and an AI chatbot for an improved edu-tourism experience.",
+    techStack: ["Augmented Reality", "AI Chatbot", "Figma"],
+    image: "project/batur.png",
+    link: "https://go.undiksha.ac.id/GeOParK",
+    figma: "https://go.undiksha.ac.id/MbAtUr",
+  },
+  {
+    title: "Inventory App - LoanHub",
+    description: "A lending app created to address student organization complaints, aiming to improve the efficiency and transparency of borrowing items.",
+    techStack: ["React", "Javascript", "Firebase", "CSS"],
+    image: "project/loanhub.png",
+    link: "https://loanhub.vercel.app",
+    github: "https://github.com/Topaanbgs/LoanHub",
+  },
+  {
+    title: "Innovative App - Eco Companion",
+    description: "Eco-Companion is a mobile app for environmental conservation, find recycling points, join eco-activities, and earn Eco-Points for sustainable rewards.",
+    techStack: ["Figma"],
+    image: "project/eco.png",
+    link: "https://go.undiksha.ac.id/gFaMX",
+    figma: "https://go.undiksha.ac.id/wkl8D",
+  },
+  {
+    title: "App Mockup - Kick Avenue",
+    description: "Created a high-fidelity app mockup for Kick Avenue, a luxury goods marketplace. The project included developing user workflows, wireframes, and final designs.",
+    techStack: ["Figma"],
+    image: "project/kickave.png",
+    link: "https://go.undiksha.ac.id/EXojH",
+    figma: "https://go.undiksha.ac.id/qx49h",
+  },
+];

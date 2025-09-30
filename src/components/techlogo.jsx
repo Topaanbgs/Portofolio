@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaPhp, FaPython, FaJava } from "react-icons/fa";
-import { SiTailwindcss, SiLaravel, SiPostman, SiMysql, SiDocker, SiKubernetes } from "react-icons/si";
+import { SiTailwindcss, SiLaravel, SiPostman, SiMysql, SiDocker, SiKubernetes, SiFlutter, SiAndroidstudio, SiUnity } from "react-icons/si";
 
 function TechLogos() {
   const logos = [
@@ -20,6 +20,9 @@ function TechLogos() {
     <SiMysql className="text-blue-800" />,
     <SiDocker className="text-blue-500" />,
     <SiKubernetes className="text-blue-400" />,
+    <SiFlutter className="text-blue-400" />,
+    <SiAndroidstudio className="text-green-600" />,
+    <SiUnity className="text-black" />,
   ];
 
   const containerRef = useRef(null);

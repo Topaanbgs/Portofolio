@@ -1,5 +1,5 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Index from "./pages/index";
+import Index from "./pages";
 
 function App() {
   return (

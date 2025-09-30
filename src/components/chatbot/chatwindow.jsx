@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { getAIResponse } from "./api";
+import { getAIResponse } from "../../data/chatbotData";
 
 const ChatWindow = ({ onClose }) => {
   const [input, setInput] = useState("");
@@ -7,7 +7,7 @@ const ChatWindow = ({ onClose }) => {
   const [chatMessages, setChatMessages] = useState([]);
   const messagesEndRef = useRef(null);
 
-  // Initial message and auto-scroll logic
+  // Initial message
   useEffect(() => {
     const initialMessage = {
       text: "I am Amoraaa, your virtual assistant. Do you have any questions?",
@@ -77,7 +77,7 @@ const ChatWindow = ({ onClose }) => {
         ))}
         {isTyping && (
           <div className="flex items-start mb-2">
-            <img src="/amoraaa.png" alt="Bot Profile" className="w-[30px] h-[30px] rounded-full border-2 border-black mr-2" />
+            <img src="amoraaa.png" alt="Bot Profile" className="w-[30px] h-[30px] rounded-full border-2 border-black mr-2" />
             <div className="p-[6px] rounded-[15px] border-2 border-black bg-white shadow-[2px_2px_0px_#000] max-w-[calc(100%-45px)] break-words text-black text-[12px]">
               <span className="font-bold typing-animation">...</span>
             </div>
