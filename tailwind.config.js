@@ -21,6 +21,9 @@ module.exports = {
         // Applies the blink keyframe animation.
         blink: "blink 1s step-start infinite",
       },
+      fontFamily: {
+        futura: ["Futura", "sans-serif"],
+      },
     },
   },
   plugins: [],

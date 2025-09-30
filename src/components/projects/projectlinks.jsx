@@ -1,3 +1,4 @@
+
 import React from "react";
 import { FaGithub, FaLink, FaFigma } from "react-icons/fa";
 
@@ -24,7 +25,7 @@ const ProjectLinks = ({ project }) => {
   ];
 
   return (
-    <div className="flex space-x-4 mb-4">
+    <div className="flex space-x-3 mb-3">
       {links.map((link, index) => (
         link.condition && (
           <a
@@ -32,9 +33,9 @@ const ProjectLinks = ({ project }) => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 text-sm text-gray-400 hover:text-white transition-colors duration-300"
+            className="flex items-center space-x-1.5 text-[14px] text-gray-400 hover:text-white transition-colors duration-300"
           >
-            <link.icon className="h-4 w-4" />
+            <link.icon className="h-3 w-3" />
             <span>{link.label}</span>
           </a>
         )

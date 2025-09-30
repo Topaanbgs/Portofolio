@@ -32,7 +32,7 @@ export default function Contact() {
   const handleCloseNotification = () => setIsSubmitted(false);
 
   return (
-    <div id="contact" className="relative min-h-screen flex items-center justify-center text-white">
+    <div id="contact" className="relative min-h-screen flex items-center justify-center text-white font-[Futura]">
       <ContactVideoBg src={contactVideo} />
       <div className="absolute inset-0 bg-black/70" />
 
